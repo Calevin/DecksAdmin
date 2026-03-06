@@ -1,0 +1,37 @@
+# --- IDEs & System ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+.antigravity/
+*.log
+
+# --- Docker & DB ---
+postgres_data/
+
+# --- Backend (Java/Maven) ---
+backend/target/
+backend/*.jar
+backend/*.war
+backend/*.ear
+# Maven wrapper
+backend/.mvn/wrapper/maven-wrapper.jar
+backend/src/main/resources/application-local.properties
+
+# --- Frontend (Node/React/Vite) ---
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/*.local
+# Logs de npm
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# --- Environment Files ---
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
