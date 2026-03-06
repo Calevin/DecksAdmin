@@ -44,6 +44,9 @@ npm run dev
 
 ## 📝 Development Conventions
 
+### Testing
+- **Coverage Requirement:** All new features or updates must be accompanied by their respective unit and integration tests.
+
 ### Backend (Java 25+)
 - **Modern Features:** Use `Records` for DTOs. Use `var` for local variables. Leverage Pattern Matching and Switch Expressions.
 - **Persistence:** Use `Snake_case` for database names and `CamelCase` for Java entities/properties.

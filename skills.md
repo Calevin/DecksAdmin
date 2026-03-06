@@ -15,6 +15,8 @@
 ## 🧪 Development
 - **run-back**: Command: `./mvnw spring-boot:run`
 - **run-front**: Command: `npm run dev`
+- **test-back**: Command: `./mvnw test`
+- **test-front**: Command: `npm run test`
 
 ## 📝 Use Cases
 - **features**: Write use cases in `.feature` files using Gherkin format located in `docs/features/`.
