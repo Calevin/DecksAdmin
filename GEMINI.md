@@ -54,6 +54,9 @@ npm run dev
 - **Typing:** Strict TypeScript types are mandatory for all components and data structures.
 - **UI:** Use Tailwind CSS for styling and Shadcn/ui for consistent components.
 
+### Documentation & Use Cases
+- **BDD / Features:** Project use cases will be defined using `.feature` files conforming to the Gherkin format, located in the `docs/features/` directory.
+
 ## 🗂 Domain Specifics (Mitos y Leyendas)
 - **Cards:** Name, Edition, Rarity, Type (Aliado, etc.), Cost, Strength (for Aliados), Ability text.
 - **Inventory:** Tracking of physical copies owned.

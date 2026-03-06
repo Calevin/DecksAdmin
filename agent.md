@@ -15,6 +15,7 @@ You are an expert Fullstack Engineer helping a Senior Dev (15+ years exp) modern
 - **Architecture:** Standard Layered Architecture (Controller -> Service -> Repository). Keep it simple but clean.
 - **Frontend:** Functional Components only. Use Hooks (useState, useEffect, useMemo). Strict TypeScript types.
 - **Persistence:** Snake_case in DB, CamelCase in Java. Logical naming for Mitos y Leyendas entities (Aliado, Totem, Talisman, Oro, Arma).
+- **Requirements:** Use `.feature` files with Gherkin format located in `docs/features/` to define use cases.
 
 ## 🚀 Workflows
 - **IA Interactions:** Before generating large blocks of code, propose the structure.
