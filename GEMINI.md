@@ -6,7 +6,7 @@ DecksAdmin is a specialized TCG (Trading Card Game) inventory and deck builder a
 The project is designed as a full-stack application with a clear separation between a Java-based backend and a React-based frontend.
 
 ## 🛠 Tech Stack
-- **Backend:** Java 21 (LTS), Spring Boot 3.4+, Spring Data JPA, Hibernate.
+- **Backend:** Java 25 (LTS), Spring Boot 3.4+, Spring Data JPA, Hibernate.
 - **Frontend:** React 18/19 (Vite), TypeScript, Tailwind CSS, Shadcn/ui.
 - **Database:** PostgreSQL 16 (running in Docker).
 - **Architecture:** Standard Layered Architecture (Controller -> Service -> Repository).
@@ -16,7 +16,7 @@ The project is designed as a full-stack application with a clear separation betw
 
 ### Prerequisites
 - Docker & Docker Compose
-- Java 21 JDK
+- Java 25 JDK
 - Node.js (Latest LTS)
 - Maven (or use provided wrapper after scaffolding)
 
@@ -43,7 +43,7 @@ npm run dev
 
 ## 📝 Development Conventions
 
-### Backend (Java 21+)
+### Backend (Java 25+)
 - **Modern Features:** Use `Records` for DTOs. Use `var` for local variables. Leverage Pattern Matching and Switch Expressions.
 - **Persistence:** Use `Snake_case` for database names and `CamelCase` for Java entities/properties.
 - **Naming:** Follow "Mitos y Leyendas" domain logic for entity names (e.g., `Aliado`, `Totem`, `Talisman`, `Oro`, `Arma`).

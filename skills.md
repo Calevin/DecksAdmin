@@ -2,7 +2,7 @@
 
 ## 🏗 Project Scaffolding
 - **init-backend**: Use Spring Initializr CLI or curl to create the `backend/` folder.
-  - Config: Java 21, Maven, Spring Boot 3.4.x.
+  - Config: Java 25, Maven, Spring Boot 4.0.3.
   - Dependencies: web, data-jpa, postgresql, validation, lombok.
 - **init-frontend**: Use Vite to create the `frontend/` folder.
   - Config: React, TypeScript, SWC.
