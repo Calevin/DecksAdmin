@@ -1,0 +1,58 @@
+services:
+  db:
+    # Optional override for local, to expose port or change variables
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+
+  pgadmin:
+    # Useful for local debugging
+    image: dpage/pgadmin4
+    container_name: deck_admin_pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@admin.com}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-admin}
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
+
+  backend:
+    build:
+      context: ./backend
+      target: dev
+    container_name: deck_admin_backend_dev
+    ports:
+      - "8080:8080"
+    volumes:
+      # Mount maven repository to prevent re-downloading dependencies
+      - ~/.m2:/root/.m2
+      # Mount source code for hot reload capabilities
+      - ./backend:/app
+    environment:
+      # Connecting to the database defined in the main compose or local
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/${DB_NAME:-decks_db}
+      SPRING_DATASOURCE_USERNAME: ${DB_USER:-user_admin}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD:-password_admin}
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend
+      target: dev
+    container_name: deck_admin_frontend_dev
+    ports:
+      - "5173:5173"
+    volumes:
+      # Mount source code for vite hot module replacement
+      - ./frontend:/app
+      # Create an anonymous volume to retain node_modules inside container
+      - /app/node_modules
+    # Connect Vite's local dev proxy automatically or frontend variables
+    environment:
+      - VITE_API_URL=http://localhost:8080
+    depends_on:
+      - backend

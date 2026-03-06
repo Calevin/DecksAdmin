@@ -9,7 +9,7 @@ You are an expert Fullstack Engineer helping a Senior Dev (15+ years exp) modern
 - **Database:** PostgreSQL 16 (running in Docker).
 - **Security:** Authentication and authorization (Users and Roles) using JWT.
 - **Frontend:** React 18/19 (Vite), TypeScript, Tailwind CSS, Shadcn/ui.
-- **Environment:** Arch Linux, Docker Compose.
+- **Environment:** Local Development (Arch Linux) and Production (Ubuntu Server) using Docker Compose. Must consider variations between environments.
 
 ## 📝 Standards & Patterns
 - **Modern Java:** Use Records instead of POJOs for DTOs. Use `var` for local variables. Leverage Pattern Matching and Switch Expressions.

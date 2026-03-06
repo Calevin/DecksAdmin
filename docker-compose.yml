@@ -4,22 +4,43 @@ services:
     container_name: deck_admin_db
     restart: always
     environment:
-      POSTGRES_USER: user_admin
-      POSTGRES_PASSWORD: password_admin
-      POSTGRES_DB: decks_db
-    ports:
-      - "5432:5432"
+      POSTGRES_USER: ${DB_USER:-user_admin}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-password_admin}
+      POSTGRES_DB: ${DB_NAME:-decks_db}
+    # Avoid exposing ports globally in production, but let dev overrides open them
+    expose:
+      - "5432"
     volumes:
-      - ./postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
 
-  # Opcional: Interfaz visual para la DB
-  pgadmin:
-    image: dpage/pgadmin4
-    container_name: deck_admin_pgadmin
+  backend:
+    build:
+      context: ./backend
+      target: prod
+    container_name: deck_admin_backend
+    restart: always
+    # Prod exposed for any external API requests if standalone, but typically frontend hits 80
+    expose:
+      - "8080"
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@admin.com
-      PGADMIN_DEFAULT_PASSWORD: admin
-    ports:
-      - "5050:80"
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/${DB_NAME:-decks_db}
+      SPRING_DATASOURCE_USERNAME: ${DB_USER:-user_admin}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD:-password_admin}
+      SPRING_PROFILES_ACTIVE: prod
+      # Optional variable if needed for backend logic
     depends_on:
       - db
+
+  frontend:
+    build:
+      context: ./frontend
+      target: prod
+    container_name: deck_admin_frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

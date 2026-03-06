@@ -11,7 +11,7 @@ The project is designed as a full-stack application with a clear separation betw
 - **Frontend:** React 18/19 (Vite), TypeScript, Tailwind CSS, Shadcn/ui.
 - **Database:** PostgreSQL 16 (running in Docker).
 - **Architecture:** Standard Layered Architecture (Controller -> Service -> Repository).
-- **Environment:** Arch Linux, Docker Compose.
+- **Environment:** Local Development (Arch Linux) and Production (Ubuntu Server) utilizing Docker and Docker Compose.
 
 ## 🚀 Building and Running
 
@@ -22,7 +22,9 @@ The project is designed as a full-stack application with a clear separation betw
 - Maven (or use provided wrapper after scaffolding)
 
 ### Infrastructure
-Start the PostgreSQL database and pgAdmin:
+The application is intended to run seamlessly in both Local (Development on Arch Linux) and Production (personal Ubuntu Server) environments via Docker and Docker Compose. Environment configurations must be decoupled and handled carefully.
+
+Start the PostgreSQL database and pgAdmin (Local):
 ```bash
 docker-compose up -d
 ```

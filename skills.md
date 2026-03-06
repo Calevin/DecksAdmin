@@ -20,3 +20,7 @@
 
 ## 📝 Use Cases
 - **features**: Write use cases in `.feature` files using Gherkin format located in `docs/features/`.
+
+## 🚀 Deployment / Operations
+- **run-docker-dev**: Command: `docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d` (Para desarrollo local con hot-reload e interfaz DB expuesta).
+- **run-docker-prod**: Command: `docker-compose up -d` (Para levantar producción completo en Ubuntu Server).
