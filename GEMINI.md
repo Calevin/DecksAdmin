@@ -7,6 +7,7 @@ The project is designed as a full-stack application with a clear separation betw
 
 ## 🛠 Tech Stack
 - **Backend:** Java 25 (LTS), Spring Boot 3.4+, Spring Data JPA, Hibernate.
+- **Security:** JWT-based Authentication and Authorization (Users and Roles).
 - **Frontend:** React 18/19 (Vite), TypeScript, Tailwind CSS, Shadcn/ui.
 - **Database:** PostgreSQL 16 (running in Docker).
 - **Architecture:** Standard Layered Architecture (Controller -> Service -> Repository).
@@ -31,7 +32,7 @@ Navigate to `backend/` and run:
 ```bash
 ./mvnw spring-boot:run
 ```
-*Note: Scaffolding is pending. Dependencies include: Web, Data JPA, PostgreSQL, Validation, Lombok.*
+*Note: Scaffolding is pending. Dependencies include: Web, Data JPA, PostgreSQL, Validation, Lombok, Security (JWT).*
 
 ### Frontend (Planned)
 Navigate to `frontend/` and run:

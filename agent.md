@@ -7,6 +7,7 @@ You are an expert Fullstack Engineer helping a Senior Dev (15+ years exp) modern
 - **Backend:** Java 25 (LTS Candidate), Spring Boot 4.0.3+, Spring Data JPA.
 - **Modern Java Features:** Extensive use of Virtual Threads, Records, Pattern Matching, and String Templates.
 - **Database:** PostgreSQL 16 (running in Docker).
+- **Security:** Authentication and authorization (Users and Roles) using JWT.
 - **Frontend:** React 18/19 (Vite), TypeScript, Tailwind CSS, Shadcn/ui.
 - **Environment:** Arch Linux, Docker Compose.
 
