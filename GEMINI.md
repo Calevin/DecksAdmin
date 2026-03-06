@@ -1,0 +1,60 @@
+# DecksAdmin - GEMINI Context
+
+## 🎯 Project Overview
+DecksAdmin is a specialized TCG (Trading Card Game) inventory and deck builder application focused on the "Mitos y Leyendas" card game. It aims to provide a modern interface for managing physical card collections and building competitive decks according to standard game rules.
+
+The project is designed as a full-stack application with a clear separation between a Java-based backend and a React-based frontend.
+
+## 🛠 Tech Stack
+- **Backend:** Java 21 (LTS), Spring Boot 3.4+, Spring Data JPA, Hibernate.
+- **Frontend:** React 18/19 (Vite), TypeScript, Tailwind CSS, Shadcn/ui.
+- **Database:** PostgreSQL 16 (running in Docker).
+- **Architecture:** Standard Layered Architecture (Controller -> Service -> Repository).
+- **Environment:** Arch Linux, Docker Compose.
+
+## 🚀 Building and Running
+
+### Prerequisites
+- Docker & Docker Compose
+- Java 21 JDK
+- Node.js (Latest LTS)
+- Maven (or use provided wrapper after scaffolding)
+
+### Infrastructure
+Start the PostgreSQL database and pgAdmin:
+```bash
+docker-compose up -d
+```
+
+### Backend (Planned)
+Navigate to `backend/` and run:
+```bash
+./mvnw spring-boot:run
+```
+*Note: Scaffolding is pending. Dependencies include: Web, Data JPA, PostgreSQL, Validation, Lombok.*
+
+### Frontend (Planned)
+Navigate to `frontend/` and run:
+```bash
+npm install
+npm run dev
+```
+*Note: Scaffolding is pending. Use Vite with React and TypeScript.*
+
+## 📝 Development Conventions
+
+### Backend (Java 21+)
+- **Modern Features:** Use `Records` for DTOs. Use `var` for local variables. Leverage Pattern Matching and Switch Expressions.
+- **Persistence:** Use `Snake_case` for database names and `CamelCase` for Java entities/properties.
+- **Naming:** Follow "Mitos y Leyendas" domain logic for entity names (e.g., `Aliado`, `Totem`, `Talisman`, `Oro`, `Arma`).
+
+### Frontend (React + TypeScript)
+- **Component Style:** Use Functional Components only.
+- **State Management:** Prioritize React Hooks (`useState`, `useEffect`, `useMemo`).
+- **Typing:** Strict TypeScript types are mandatory for all components and data structures.
+- **UI:** Use Tailwind CSS for styling and Shadcn/ui for consistent components.
+
+## 🗂 Domain Specifics (Mitos y Leyendas)
+- **Cards:** Name, Edition, Rarity, Type (Aliado, etc.), Cost, Strength (for Aliados), Ability text.
+- **Inventory:** Tracking of physical copies owned.
+- **Decks:** Standard collection of 50 cards following MyL deck-building rules.

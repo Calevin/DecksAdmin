@@ -1,0 +1,25 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: deck_admin_db
+    restart: always
+    environment:
+      POSTGRES_USER: user_admin
+      POSTGRES_PASSWORD: password_admin
+      POSTGRES_DB: decks_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+
+  # Opcional: Interfaz visual para la DB
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: deck_admin_pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
